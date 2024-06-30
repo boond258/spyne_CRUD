@@ -1,0 +1,24 @@
+<!-- app/templates/register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>{{ form.name.label }} {{ form.name() }}</div>
+            <div>{{ form.email.label }} {{ form.email() }}</div>
+            <div>{{ form.mobile_no.label }} {{ form.mobile_no() }}</div>
+            <div>{{ form.password.label }} {{ form.password() }}</div>
+            <div>{{ form.confirm_password.label }} {{ form.confirm_password() }}</div>
+            <div>{{ form.submit() }}</div>
+        </form>
+    </div>
+</body>
+</html>

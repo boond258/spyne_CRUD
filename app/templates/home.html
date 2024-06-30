@@ -1,0 +1,22 @@
+<!-- app/templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Discussion Forum</h2>
+        {% if current_user.is_authenticated %}
+            <p>Hello, {{ current_user.name }}!</p>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a> |
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </div>
+</body>
+</html>
